@@ -1,3 +1,9 @@
+/*
+Atividades da aula de 26/03
+Nome: Cláudia L P Sampedro
+Descrição: Faça uma thread Java que realize a leitura de um arquivotexto com frases e exiba as frases a cada 10 segundos.
+*/
+
 import java.io.*;
 
 public class PrintFile extends Thread {

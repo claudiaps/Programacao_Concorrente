@@ -1,3 +1,10 @@
+/*
+Atividades da aula de 26/03
+Nome: Cláudia L P Sampedro
+Descrição: Faca uma thread Java que fica aguardando uma sequˆencianum ́erica de tamanho arbitr ́ario digitado por usu ́ario pararealizar uma soma.  Use o join().
+*/
+
+
 import java.util.*;
 
 public class JoinThreadSum extends Thread {

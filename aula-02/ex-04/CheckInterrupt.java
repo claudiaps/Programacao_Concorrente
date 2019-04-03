@@ -1,3 +1,9 @@
+/*
+Atividades da aula de 26/03
+Nome: Cláudia L P Sampedro
+Descrição:  Faça uma Thread que monitora um conjunto de threads eexiba quais threads receberam sinais de interrup ̧c ̃ao.
+*/
+
 public class CheckInterrupt extends Thread {
 
     Thread[] thread;

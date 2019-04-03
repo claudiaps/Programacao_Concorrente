@@ -1,3 +1,11 @@
+/*
+Atividades da aula de 25/03
+Nome: Cláudia L P Sampedro
+Descrição:  Implemente o exemplo de c ́odigo que gera a condi ̧c ̃ao dedisputa e tente gerar um teste para que ocorra um problemade seguran ̧ca (safety).
+*/
+
+
+
 import java.util.ArrayList;
 
 class Counter{

@@ -1,3 +1,11 @@
+/*
+Atividades da aula de 25/03
+Nome: Cláudia L P Sampedro
+Descrição: Fa ca um programa que receba um valor indicando um n ́umerode threads a serem instanciadas e teste os dois modos de criar threads em Java.* dica:  use oThread.sleeppara pausar as threads por umintervalo de tempo.
+*/
+
+
+
 public class ThreadsRunnable implements Runnable{
 
     @Override

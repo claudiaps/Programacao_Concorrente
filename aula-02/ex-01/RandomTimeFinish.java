@@ -1,3 +1,10 @@
+/*
+Atividades da aula de 26/03
+Nome: Cláudia L P Sampedro
+Descrição: Faca um programa em Java que inicie trˆes threads e, cadathread, espere um tempo aleat ́orio para terminar.
+*/
+
+
 import java.util.Random;
 
 public class RandomTimeFinish extends Thread {

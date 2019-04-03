@@ -1,7 +1,11 @@
+/*
+Atividades da aula de 26/03
+Nome: Cláudia L P Sampedro
+Descrição: Faca um programa Java que envia interrup ̧c ̃oes para asthreads dos exerc ́ıcios anteriores.  As threads devem fazer otratamento dessas interrupcoes e realizar uma finaliza ̧c ̃aolimpa.
+*/
+
 import java.io.*;
 import java.util.Random;
-
-
 
 class PrintFile extends Thread {
 
