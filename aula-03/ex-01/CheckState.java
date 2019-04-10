@@ -1,25 +1,22 @@
 /*
-Atividades da aula de 26/03
+Atividades da aula de 01/04
 Nome: Cláudia L P Sampedro
-Descrição:  Faça uma Thread que monitora um conjunto de threads eexiba quais threads receberam sinais de interrup ̧c ̃ao.
+Descrição:  Faça um programa em Java que consulte periodicamente oestado de um conjunto de threads.
 */
 
-public class CheckInterrupt extends Thread {
+public class CheckState extends Thread {
 
     Thread[] thread;
 
-    CheckInterrupt(Thread[] thread) {
+    CheckState(Thread[] thread) {
         this.thread = thread;
     }
 
     @Override
     public void run() {
         while(true){
-
             for (int i = 0; i < 3; i++) {
-                if (thread[i].isInterrupted()) {
-                    System.out.println("Thread " + i + " is interrupted");
-                }
+                System.out.println(thread[i].getState().name());
             }
         }
     }
@@ -30,8 +27,8 @@ public class CheckInterrupt extends Thread {
             threadsArray[i] = new RegularThread();
             threadsArray[i].start();
         }
-        threadsArray[2].interrupt();
-        Thread threadMonitor = new CheckInterrupt(threadsArray);
+
+        Thread threadMonitor = new CheckState(threadsArray);
         threadMonitor.start();
 
     }
@@ -41,5 +38,11 @@ class RegularThread extends Thread {
     @Override
     public void run() {
         System.out.println("starting a new thread");
+        try {
+            Thread.sleep(1000);
+
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 }
