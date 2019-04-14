@@ -1,17 +1,14 @@
 /*
-Atividades da aula de 09/04
+Atividades da aula de 01/04
 Nome: Cláudia L P Sampedro
-Descrição: Fa ̧ca um programa em Java que use Threads para encontraros n ́umeros primos dentro de um intervalo.  O m ́etodo quecontabiliza os n ́umeros primos deve possuir como entrada:valor inicial e final do intervalo, n ́umero de threads.
-
+Descrição: Faca um programa em Java com threads que exiba osn ́umeros primos entre 0 e 100000.
 */
-
 
 import java.util.*;
 
-
 class Counter{
     int last_number;
-    int value = 1;
+    int value = 0;
 
     public Counter(int last_number){
         this.last_number = last_number;
@@ -27,12 +24,12 @@ class Counter{
     }
 }
 
-public class GetPrimo extends Thread{
+public class GetPrimos extends Thread{
     
     Counter counter;
     ArrayList <Integer> primo_array;
 
-    GetPrimo(Counter counter, ArrayList <Integer> primo_array){
+    GetPrimos(Counter counter, ArrayList <Integer> primo_array){
         this.counter = counter;
         this.primo_array = primo_array;
     }
@@ -59,29 +56,32 @@ public class GetPrimo extends Thread{
     }
 
     public static void main(String[] args) {
-        Counter cont = new Counter(Integer.parseInt(args[0]));
+        Counter cont = new Counter(100000);
         ArrayList <Integer> primos = new ArrayList<>();
-        Thread t1 = new GetPrimo(cont, primos);
-        Thread t2 = new GetPrimo(cont, primos);
-        Thread t3 = new GetPrimo(cont, primos);
-        Thread t4 = new GetPrimo(cont, primos);
-        Thread t5 = new GetPrimo(cont, primos);
-        Thread t6 = new GetPrimo(cont, primos);
-        Thread t7 = new GetPrimo(cont, primos);
-        Thread t8 = new GetPrimo(cont, primos);
-
+        Thread t1 = new GetPrimos(cont, primos);
+        Thread t2 = new GetPrimos(cont, primos);
+        Thread t3 = new GetPrimos(cont, primos);
+        Thread t4 = new GetPrimos(cont, primos);
 
         t1.start();
         t2.start();
         t3.start();
         t4.start();
-        t5.start();
-        t6.start();
-        t7.start();
-        t8.start();
 
+        try {
+            t1.join();
+            t2.join();
+            t3.join();
+            t4.join();
 
-        System.out.println(primos);
+            
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+
+        for (int i = 0; i< primos.size(); i++){
+            System.out.println(primos.get(i));
+        }
         
     }
 

@@ -1,13 +1,11 @@
 /*
 Atividades da aula de 09/04
 Nome: Cláudia L P Sampedro
-Descrição: Fa ̧ca um programa em Java que use Threads para encontraros n ́umeros primos dentro de um intervalo.  O m ́etodo quecontabiliza os n ́umeros primos deve possuir como entrada:valor inicial e final do intervalo, n ́umero de threads.
-
+Descrição: Modifique o c ́odigo para garantir que ser ́a thread-safe.Implemente trˆes vers ̃oes: sincronizando o método
+Descrição: 
 */
 
-
 import java.util.*;
-
 
 class Counter{
     int last_number;
@@ -17,7 +15,7 @@ class Counter{
         this.last_number = last_number;
     }
 
-    public int getValue() {
+    public synchronized int getValue() {
         if(value > last_number){
             return -1;
         }
@@ -27,12 +25,12 @@ class Counter{
     }
 }
 
-public class GetPrimo extends Thread{
+public class GetPrimoMethod extends Thread{
     
     Counter counter;
     ArrayList <Integer> primo_array;
 
-    GetPrimo(Counter counter, ArrayList <Integer> primo_array){
+    GetPrimoMethod(Counter counter, ArrayList <Integer> primo_array){
         this.counter = counter;
         this.primo_array = primo_array;
     }
@@ -61,14 +59,14 @@ public class GetPrimo extends Thread{
     public static void main(String[] args) {
         Counter cont = new Counter(Integer.parseInt(args[0]));
         ArrayList <Integer> primos = new ArrayList<>();
-        Thread t1 = new GetPrimo(cont, primos);
-        Thread t2 = new GetPrimo(cont, primos);
-        Thread t3 = new GetPrimo(cont, primos);
-        Thread t4 = new GetPrimo(cont, primos);
-        Thread t5 = new GetPrimo(cont, primos);
-        Thread t6 = new GetPrimo(cont, primos);
-        Thread t7 = new GetPrimo(cont, primos);
-        Thread t8 = new GetPrimo(cont, primos);
+        Thread t1 = new GetPrimoMethod(cont, primos);
+        Thread t2 = new GetPrimoMethod(cont, primos);
+        Thread t3 = new GetPrimoMethod(cont, primos);
+        Thread t4 = new GetPrimoMethod(cont, primos);
+        Thread t5 = new GetPrimoMethod(cont, primos);
+        Thread t6 = new GetPrimoMethod(cont, primos);
+        Thread t7 = new GetPrimoMethod(cont, primos);
+        Thread t8 = new GetPrimoMethod(cont, primos);
 
 
         t1.start();
