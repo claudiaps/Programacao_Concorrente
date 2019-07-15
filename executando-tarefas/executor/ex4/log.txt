@@ -1,0 +1,8 @@
+Log
+newfile.txt
+newfile.txt
+.goutputstream-XLY24Z
+.goutputstream-XLY24Z
+.goutputstream-XLY24Z
+.goutputstream-XLY24Z
+newfile.txt
